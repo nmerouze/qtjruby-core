@@ -1,0 +1,15 @@
+<project default="qtjruby-core">
+  
+  <target name="qtjruby-core" description="Create a jar containing Qt::JRuby core.">
+    
+    <javac srcdir="." destdir="build">
+      <include name="org/qtjruby/*.java"/>
+    </javac>
+ 
+    <jar destfile="lib/qtjruby-core.jar">
+      <fileset dir="build"/>
+    </jar>
+ 
+  </target>
+  
+</project>

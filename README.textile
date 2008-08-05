@@ -1,0 +1,56 @@
+h1. Qt::JRuby Core
+
+*WARNING* : Qt::JRuby is under active development. Everything can change.
+
+h2. Description
+
+Qt::JRuby core contains all you need to run Qt Jambi with JRuby. If you want more (examples, DSL, generator...), look at Qt::JRuby more.
+
+h2. Requirements
+
+* Java 1.5+
+* Qt Jambi 4.4+
+* JRuby 1.1+
+
+h2. Installation
+
+Download Qt Jambi if you havn't do it yet. Put qtjambi-$VERSION.jar and qtjambi-$PLATFORM-$VERSION.jar into JRUBY_HOME/lib folder. Then :
+
+<pre><code>git clone git://github.com/nmerouze/qtjruby.git
+cd /path/to/qtjruby/qtjruby-core
+jruby -S rake</code></pre>
+
+h2. Run
+
+<pre><code>jruby -S qtjruby example4.rb</code></pre>
+
+Add <code>-J-XstartOnFirstThread</code> option if you're under Mac OS X.
+
+h2. Example
+
+<pre><code>Qt::Application.initialize(ARGV)
+hello = Qt::PushButton.new 'Hello World!'
+hello.show
+Qt::Application.exec</code></pre>
+
+h2. Where does it work ?
+
+I've tested Qt::JRuby under Mac OS 10.4.11 and Ubuntu 8.04 (Java 5 and 6). It's not working under Mac OS 10.5 (may be with the latest version). Windows has not been tested yet but it's probably working.
+
+Please send me a mail if you have a problem elsewhere.
+
+h2. Links
+
+* Qt::JRuby : http://qtjruby.org
+* Qt::JRuby sources : http://github.com/nmerouze/qtjruby
+* JRuby : http://jruby.codehaus.org/
+* Install JRuby : http://wiki.jruby.org/wiki/Getting_Started
+* Qt Jambi 4.4 : http://trolltech.com/downloads
+* Qt Jambi Documentation : http://doc.trolltech.com
+* Git : http://git.or.cz/
+
+h2. License and support
+
+(C) 2008 Nicolas Mérouze, under an MIT licence. http://www.opensource.org/licenses/mit-license.php
+
+Please leave any bugs or feedback at nicolas.merouze [at] gmail [dot] com
