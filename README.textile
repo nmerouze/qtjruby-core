@@ -1,14 +1,16 @@
 h1. Qt::JRuby Core
 
+*WARNING* : Qt::JRuby is under active development. Everything can change.
+
 h2. Description
 
-Qt::JRuby core contains all you need to run Qt Jambi with JRuby.
+Qt::JRuby core contains all you need to run Qt Jambi with JRuby. If you want more (examples, DSL, generator...), look at Qt::JRuby more.
 
 h2. Requirements
 
 * Java 1.5+
 * Qt Jambi 4.4+
-* JRuby 1.1.3+
+* JRuby 1.1+
 
 h2. Installation
 
@@ -20,7 +22,7 @@ jruby -S rake</code></pre>
 
 or
 
-<pre><code>jruby -S gem install nmerouze-qtjruby-core --source http://gems.github.com</code></pre>
+<pre><code>jruby -S gem install nmerouze-qtjruby-core --source http://gems.github.com -i gems</code></pre>
 
 h2. Run
 
