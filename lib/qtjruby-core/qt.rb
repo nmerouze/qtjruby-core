@@ -5,6 +5,12 @@ require qtlib / 'ext' / 'object'
 
 module Qt
   
+  # Create Signal classes
+  0.upto(9) do |i|
+    klass = Class.new(Java::JavaClass.for_name("org.qtjruby.Signal#{i}").ruby_class)
+    const_set("Signal#{i}", klass)
+  end
+  
   # Set all Qt constants to Ruby Qt module because const_missing can't do this work.
   com.trolltech.qt.core.Qt.constants.each do |const_name|
     const_set(const_name, com.trolltech.qt.core.Qt.const_get(const_name))
