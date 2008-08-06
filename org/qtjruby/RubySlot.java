@@ -17,7 +17,7 @@ class RubySlot {
 		
 		public void execute_0() {
 				RubyObject rbs[] = new RubyObject[0];
-				slot.call(rbs, block);
+				slot.call(slot.getRuntime().getCurrentContext(), rbs, block);
     }
 
 		private void genericExecute(Object ... vals) {
@@ -25,7 +25,7 @@ class RubySlot {
         for (int i=0; i<vals.length; ++i) {
             rbs[i] = wrap(vals[i]);
         }
-        slot.call(rbs, block);
+        slot.call(slot.getRuntime().getCurrentContext(), rbs, block);
     }
 
 		public void execute_1(Object a) {

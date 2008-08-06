@@ -16,9 +16,13 @@ h2. Installation
 
 Download Qt Jambi if you havn't do it yet. Put qtjambi-$VERSION.jar and qtjambi-$PLATFORM-$VERSION.jar into JRUBY_HOME/lib folder. Then :
 
-<pre><code>git clone git://github.com/nmerouze/qtjruby.git
-cd /path/to/qtjruby/qtjruby-core
+<pre><code>git clone git://github.com/nmerouze/qtjruby-core.git
+cd /path/to/qtjruby-core
 jruby -S rake</code></pre>
+
+or
+
+<pre><code>jruby -S gem install nmerouze-qtjruby-core --source http://gems.github.com -i gems</code></pre>
 
 h2. Run
 
