@@ -37,7 +37,7 @@ Qt::Application.exec</code></pre>
 
 h2. Where does it work ?
 
-I've tested Qt::JRuby under Mac OS 10.4.11 and Ubuntu 8.04 (Java 5 and 6). It's not working under Mac OS 10.5 (may be with the latest version). Windows has not been tested yet but it's probably working.
+I've tested Qt::JRuby under Mac OS X 10.4 and 10.5 and Ubuntu 8.04 (Java 5 and 6). Windows has not been tested yet but it's probably working.
 
 Please send me a mail if you have a problem elsewhere.
 
