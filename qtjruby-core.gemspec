@@ -8,33 +8,28 @@ Gem::Specification.new do |s|
  "lib/qtjruby-core",
  "lib/qtjruby-core.jar",
  "lib/qtjruby-core.rb",
- "lib/qtjruby-core/core_ext",
- "lib/qtjruby-core/core_ext.rb",
  "lib/qtjruby-core/qt",
  "lib/qtjruby-core/qt.rb",
  "lib/qtjruby-core/version.rb",
- "lib/qtjruby-core/core_ext/class.rb",
- "lib/qtjruby-core/core_ext/module.rb",
- "lib/qtjruby-core/core_ext/object.rb",
- "lib/qtjruby-core/core_ext/rubygems.rb",
- "lib/qtjruby-core/core_ext/string.rb",
  "lib/qtjruby-core/qt/ext",
  "lib/qtjruby-core/qt/ext/application.rb",
  "lib/qtjruby-core/qt/ext/object.rb"]
   s.rubygems_version = "1.2.0"
-  s.platform = "ruby"
-  s.date = "Wed Aug 06 00:00:00 +0200 2008"
+  s.platform = "java"
+  s.date = "Wed Aug 27 00:00:00 +0200 2008"
   s.homepage = "http://qtjruby.org"
+  s.add_dependency "extlib", ">= 0.9.5"
   s.executables = ["qtjruby"]
   s.bindir = "bin"
   s.summary = "Qt meets Java meets Ruby."
   s.specification_version = "2"
   s.email = "nicolas.merouze@gmail.com"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
   s.required_rubygems_version = ">= 0"
   s.require_paths = ["lib"]
   s.required_ruby_version = ">= 0"
-  s.has_rdoc = "false"
+  s.extra_rdoc_files = ["LICENSE", "README.textile"]
+  s.has_rdoc = "true"
   s.name = "qtjruby-core"
   s.authors = ["Nicolas Merouze"]
   s.loaded = "false"
