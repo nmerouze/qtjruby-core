@@ -18,10 +18,6 @@ Download Qt Jambi for your platform. Put qtjambi-$VERSION.jar and qtjambi-$PLATF
 cd /path/to/qtjruby-core
 jruby -S rake install</code></pre>
 
-or (not working yet)
-
-<pre><code>jruby -S gem install nmerouze-qtjruby-core --source http://gems.github.com</code></pre>
-
 h2. Run
 
 <pre><code>jruby -S qtjruby example4.rb</code></pre>
