@@ -1,7 +1,9 @@
 require 'java'
+require 'rubygems'
 
-Dir.glob(ENV_JAVA['jruby.home'] + '/lib/qtjambi-*.jar') { |jar| require jar }
+gem 'extlib', '>=0.9.5'
+require 'extlib'
+
+Dir.glob(ENV_JAVA['jruby.home'] / 'lib' / 'qtjambi-*.jar') { |jar| require jar }
 require 'qtjruby-core.jar'
-
-require 'qtjruby-core/core_ext'
-require 'qtjruby-core/qt'
+require 'qtjruby-core' / 'qt'

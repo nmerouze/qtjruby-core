@@ -13,7 +13,7 @@ task :default => [:build, :install]
 spec = Gem::Specification.new do |s|
   s.name         = NAME
   s.version      = Qt::JRuby::VERSION
-  s.platform     = Gem::Platform::RUBY
+  s.platform     = "java"
   s.author       = "Nicolas Merouze"
   s.email        = "nicolas.merouze@gmail.com"
   s.homepage     = "http://qtjruby.org"
@@ -25,7 +25,11 @@ spec = Gem::Specification.new do |s|
   s.files        = %w( LICENSE README.textile Rakefile TODO ) + Dir["{bin,lib}/**/*"]
 
   # rdoc
-  s.has_rdoc         = false
+  s.has_rdoc         = true
+  s.extra_rdoc_files = ["LICENSE", "README.textile"]
+  
+  # Dependencies
+  s.add_dependency "extlib", ">=0.9.5"
 end
 
 Rake::GemPackageTask.new(spec) do |package|
@@ -37,7 +41,7 @@ task :build do
 end
 
 task :install => :package do
-  sh %{#{SUDO} #{ENV_JAVA['jruby.home']}/bin/jruby -S gem install pkg/#{NAME}-#{Qt::JRuby::VERSION}.gem --no-rdoc --no-ri}
+  sh %{#{SUDO} #{ENV_JAVA['jruby.home']}/bin/jruby -S gem install --local pkg/#{NAME}-#{Qt::JRuby::VERSION}-java.gem --no-rdoc --no-ri}
 end
 
 namespace :github do

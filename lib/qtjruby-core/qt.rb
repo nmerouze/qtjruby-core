@@ -1,9 +1,37 @@
-qtlib = File.join(File.dirname(__FILE__), "qt")
+dir = Pathname(__FILE__).dirname.expand_path / 'qt'
 
-require qtlib / 'ext' / 'application'
-require qtlib / 'ext' / 'object'
+require dir / 'ext' / 'application'
+require dir / 'ext' / 'object'
 
 module Qt
+  
+  # ==== Parameters
+  # name<String>:: The name of the class to get without the prefix, e.g. "Widget" for "QWidget".
+  #
+  # ==== Returns
+  # Java::JavaClass:: The Java class corresponding to the name.
+  def full_class_get(name)
+    qt = ['com', 'trolltech', 'qt']
+    packages = [nil, 'gui', 'core', 'webkit', 'phonon', 'svg', 'opengl']
+
+    packages.each do |package|
+      full_name = (qt + [package, "Q#{name}"]).compact.join('.')
+      begin
+        return Java::JavaClass.for_name(full_name)
+      rescue NameError
+        next
+      end
+    end
+    
+    packages.each do |package|
+      full_name = (qt + [package, name]).compact.join('.')
+      begin
+        return Java::JavaClass.for_name(full_name)
+      rescue NameError
+        next
+      end
+    end
+  end
   
   # Create Signal classes
   0.upto(9) do |i|
