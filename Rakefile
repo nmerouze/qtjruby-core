@@ -41,7 +41,7 @@ task :build do
 end
 
 task :install => :package do
-  sh %{#{SUDO} #{ENV_JAVA['jruby.home']}/bin/jruby -S gem install --local pkg/#{NAME}-#{Qt::JRuby::VERSION}-java.gem --no-rdoc --no-ri}
+  sh %{#{SUDO} #{ENV_JAVA['jruby.home']}/bin/jruby -S gem install --local pkg/#{NAME}-#{Qt::JRuby::VERSION}-java.gem  --no-update-sources}
 end
 
 namespace :github do

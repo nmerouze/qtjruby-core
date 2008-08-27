@@ -3,8 +3,7 @@ dir = Pathname(__FILE__).dirname.expand_path / 'qt'
 require dir / 'ext' / 'application'
 require dir / 'ext' / 'object'
 
-module Qt
-  
+class Object
   # ==== Parameters
   # name<String>:: The name of the class to get without the prefix, e.g. "Widget" for "QWidget".
   #
@@ -32,7 +31,9 @@ module Qt
       end
     end
   end
-  
+end
+
+module Qt
   # Create Signal classes
   0.upto(9) do |i|
     klass = Class.new(Java::JavaClass.for_name("org.qtjruby.Signal#{i}").ruby_class)
