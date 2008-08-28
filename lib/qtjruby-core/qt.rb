@@ -59,21 +59,23 @@ module Qt
       klass = Class.new(java_klass.ruby_class)
 
       klass.class_eval do
-        @@java_klass = java_klass
         include Qt::Ext.const_get(name) if Qt::Ext.const_defined?(name)
 
         def initialize(*args)
           super(*args)
           @source = self.clone
+        end
 
-          @@java_klass.fields.each do |field|
-            meta_class.class_eval %{
-              def #{field.name}(*args, &block)
-                Qt::Object.connect(@source.#{field.name}, self.method('slot'), &block)
-              end
-              alias :#{field.name.snake_case} :#{field.name}
-            } if field.type.to_s =~ /QSignalEmitter/
-          end
+        java_klass.fields.each do |field|
+          class_eval %{
+            alias :old_#{field.name} :#{field.name}
+            
+            def #{field.name}(*args, &block)
+              Qt::Object.connect(self.old_#{field.name}, self.method('slot'), &block)
+            end
+            
+            alias :#{field.name.snake_case} :#{field.name}
+          } if field.type.to_s =~ /QSignalEmitter/
         end
 
         protected
