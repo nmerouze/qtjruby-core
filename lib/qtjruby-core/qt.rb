@@ -3,6 +3,8 @@ dir = Pathname(__FILE__).dirname.expand_path / 'qt'
 require dir / 'ext' / 'application'
 require dir / 'ext' / 'object'
 
+class JavaClassNotFound < Exception; end
+
 class Object
   # ==== Parameters
   # name<String>:: The name of the class to get without the prefix, e.g. "Widget" for "QWidget".
@@ -30,6 +32,8 @@ class Object
         next
       end
     end
+    
+    raise JavaClassNotFound, "Q#{name} or #{name} not found."
   end
 end
 
