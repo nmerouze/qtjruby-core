@@ -18,6 +18,7 @@ spec = Gem::Specification.new do |s|
   s.email        = "nicolas.merouze@gmail.com"
   s.summary      = "Qt meets Java meets Ruby."
   s.bindir       = "bin"
+  s.executables  = %w( qtjruby )
   s.description  = s.summary
   s.require_path = "lib"
   s.files        = %w( LICENSE README.textile Rakefile TODO ) + Dir["{bin,lib}/**/*"]

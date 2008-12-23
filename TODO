@@ -1,2 +1,3 @@
 * Make benchmarks.
 * Make specs.
+* App generator, package downloader (jruby-complete, qtjambi...), others? (thor tasks?)
