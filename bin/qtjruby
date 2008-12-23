@@ -1,3 +1,0 @@
-#!/usr/bin/env jruby
-require 'qtjruby-core'
-require ARGV.shift

@@ -19,7 +19,6 @@ spec = Gem::Specification.new do |s|
   s.summary      = "Qt meets Java meets Ruby."
   s.bindir       = "bin"
   s.description  = s.summary
-  s.executables  = %w( qtjruby )
   s.require_path = "lib"
   s.files        = %w( LICENSE README.textile Rakefile TODO ) + Dir["{bin,lib}/**/*"]
 
@@ -28,7 +27,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ["LICENSE", "README.textile"]
   
   # Dependencies
-  s.add_dependency "extlib", ">=0.9.9"
+  s.add_dependency "extlib", "~>0.9.9"
 end
 
 Rake::GemPackageTask.new(spec) do |package|
