@@ -8,7 +8,7 @@ h2. Requirements
 
 * Java 1.5+
 * Qt Jambi 4.4+
-* JRuby 1.1.3+
+* JRuby 1.1.6+
 
 h2. Installation
 
@@ -31,6 +31,11 @@ h2. Example
 hello = Qt::PushButton.new 'Hello World!'
 hello.show
 Qt::Application.exec</code></pre>
+
+h2. Thor tasks (experimental)
+
+<pre><code>thor install http://github.com/nmerouze/qtjruby-core/raw/master/tasks/qtjruby.thor
+thor qtjruby:stack:install myapp</code></pre>
 
 h2. Where does it work ?
 
