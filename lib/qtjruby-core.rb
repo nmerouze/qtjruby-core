@@ -2,6 +2,11 @@ require 'rubygems'
 require 'pathname'
 dir = Pathname(__FILE__).dirname.expand_path
 
+if File.exist?(dir = File.join(Dir.pwd, 'gems'))
+  Gem.clear_paths
+  Gem.path.unshift(dir)
+end
+
 gem 'extlib', '>=0.9.9'
 require 'extlib'
 
