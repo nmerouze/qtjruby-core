@@ -2,3 +2,5 @@
 *.class
 pkg
 pkg/*
+lib/jruby-*.jar
+lib/qtjambi-*.jar

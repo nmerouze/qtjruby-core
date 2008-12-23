@@ -1,3 +1,2 @@
-* Refactor code to try to speed up Qt::JRuby.
 * Make benchmarks.
 * Make specs.

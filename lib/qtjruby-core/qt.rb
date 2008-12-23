@@ -7,7 +7,7 @@ module Qt
   include com.trolltech.qt.core.Qt
   include_package 'org.qtjruby'
   
-  module JambiClass
+  class JambiClass
     include_package 'com.trolltech.qt.core'
     include_package 'com.trolltech.qt.gui'
     include_package 'com.trolltech.qt.webkit'
@@ -36,7 +36,7 @@ module Qt
         include Qt::Ext.const_get(name) if Qt::Ext.const_defined?(name)
 
         self.superclass.java_class.fields.each do |field|
-          class_eval %{
+          self.class_eval %{
             alias :old_#{field.name} :#{field.name}
 
             def #{field.name}(*args, &block)

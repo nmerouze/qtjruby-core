@@ -16,7 +16,6 @@ spec = Gem::Specification.new do |s|
   s.platform     = "java"
   s.author       = "Nicolas Merouze"
   s.email        = "nicolas.merouze@gmail.com"
-  s.homepage     = "http://qtjruby.org"
   s.summary      = "Qt meets Java meets Ruby."
   s.bindir       = "bin"
   s.description  = s.summary
@@ -29,7 +28,7 @@ spec = Gem::Specification.new do |s|
   s.extra_rdoc_files = ["LICENSE", "README.textile"]
   
   # Dependencies
-  s.add_dependency "extlib", ">=0.9.5"
+  s.add_dependency "extlib", ">=0.9.9"
 end
 
 Rake::GemPackageTask.new(spec) do |package|
