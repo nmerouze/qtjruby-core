@@ -10,7 +10,7 @@ h1. Create a new application
 thor install http://qtjruby.org/qtjruby.thor
 thor qtjruby:app:create myapp
 cd myapp
-java -jar java -jar lib/jruby-complete-$VERSION.jar main.rb</code></pre>
+java -jar lib/jruby-complete-$VERSION.jar main.rb</code></pre>
 
 h1. Installation from sources
 
