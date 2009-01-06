@@ -1,21 +1,23 @@
-h1. Qt::JRuby Core
+h1. Qt::JRuby
 
-h2. Description
+Build crossplatform applications with Qt and Ruby.
 
-Qt::JRuby core contains all you need to run Qt Jambi with JRuby.
+h1. Create a new application
 
-h2. Requirements
+*NB*: Java must be installed on your system.
 
-* Java 1.5+
-* Qt Jambi 4.4+
-* JRuby 1.1.6+
+<pre><code>gem install thor
+thor install http://qtjruby.org/qtjruby.thor
+thor qtjruby:app:create myapp
+cd myapp
+java -jar java -jar lib/jruby-complete-$VERSION.jar main.rb</code></pre>
 
-h2. Installation
+h1. Installation from sources
 
-Download Qt Jambi for your platform. Put qtjambi-$VERSION.jar and qtjambi-$PLATFORM-$VERSION.jar into JRUBY_HOME/lib folder. Then :
+Download Qt Jambi for your platform. Put qtjambi-$VERSION.jar and qtjambi-$PLATFORM-$VERSION.jar into $JRUBY_HOME/lib folder. Then :
 
 <pre><code>jruby -S gem install extlib
-git clone git://github.com/nmerouze/qtjruby.git
+git clone git://github.com/nmerouze/qtjruby-core.git
 cd /path/to/qtjruby-core
 jruby -S rake install</code></pre>
 
@@ -32,29 +34,22 @@ hello = Qt::PushButton.new 'Hello World!'
 hello.show
 Qt::Application.exec</code></pre>
 
-h2. Thor tasks (experimental)
+h1. Where does it work ?
 
-<pre><code>thor install http://github.com/nmerouze/qtjruby-core/raw/master/tasks/qtjruby.thor
-thor qtjruby:stack:install myapp</code></pre>
+Tested under:
 
-h2. Where does it work ?
+* Mac OS X Tiger & Leopard
+* Ubuntu 8.10 with Java 6 & OpenJDK
+* Windows XP SP3
 
-I've tested Qt::JRuby under Mac OS X 10.4 and 10.5 and Ubuntu 8.04 (Java 5 and 6). Windows has not been tested yet but it's probably working.
+h1. Links
 
-Please send me a mail if you have a problem elsewhere.
-
-h2. Links
-
-* Qt::JRuby : http://qtjruby.org
-* Qt::JRuby sources : http://github.com/nmerouze/qtjruby
-* JRuby : http://jruby.codehaus.org/
-* Install JRuby : http://wiki.jruby.org/wiki/Getting_Started
-* Qt Jambi 4.4 : http://trolltech.com/downloads
+* Qt::JRuby : http://qtjruby.org & http://qtjruby.googlecode.com
+* Qt::JRuby sources : http://github.com/nmerouze/qtjruby-core
 * Qt Jambi Documentation : http://doc.trolltech.com
-* Git : http://git.or.cz/
 
-h2. License and support
+h1. License and support
 
-(C) 2008 Nicolas Mérouze, under an MIT licence. http://www.opensource.org/licenses/mit-license.php
+(C) 2008-2009 Nicolas Mérouze, under an MIT licence. http://www.opensource.org/licenses/mit-license.php
 
 Please leave any bugs or feedback at nicolas.merouze [at] gmail [dot] com
