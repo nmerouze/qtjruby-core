@@ -1,6 +1,6 @@
 #!/usr/bin/env jruby
 if File.exist?(lib_dir = Dir.pwd + '/lib')
-  Dir.glob(lib_dir + '/lib/qtjambi-*.jar') { |jar| require jar }
+  Dir.glob(lib_dir + '/qtjambi-*.jar') { |jar| require jar }
 end
 
 require 'rubygems'
@@ -13,5 +13,5 @@ end
 gem 'extlib', '~> 0.9.9'
 require 'extlib'
 
-require 'qtjruby-core'
+require File.dirname(__FILE__) + '/../lib/qtjruby-core'
 require ARGV.shift
